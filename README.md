@@ -6,7 +6,7 @@ In this README file, we present VCF-to-Hap-Map_Polarized_Fast, a tool designed t
 
 **Input Files**
 
-1. **VCF File**
+1. **Phased VCF File**
 
 `Requirement:` The VCF file must be phased using tools like Shapeit4, Eagle, or similar phasing software.
 
