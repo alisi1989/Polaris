@@ -82,10 +82,16 @@ After running the tool, the following output files will be generated:
 **Recommendations and Notes**
 
 Filtering Missing rsIDs: Ensure your VCF file does not contain variants with missing IDs. Use bcftools to filter out such variants.
-Example:
+
+`Example:`
+
+<pre>
 bcftools view -e 'ID=="."' -Oz -o filtered.vcf.gz input.vcf.gz
-Chromosome Consistency: Make sure that the chromosome naming in your VCF file matches that in your genetic map file (e.g., chr22).
-Phasing: If your VCF file is not phased, use a phasing tool like Shapeit4 or Eagle before running this software.
+</pre>
+
+`Chromosome Consistency:`
+Make sure that the chromosome naming in your VCF file matches that in your genetic map file (e.g., `chr22`).
+Phasing: If your VCF file is not phased, use a phasing tool like `Shapeit4` or `Eagle` before running this software.
 
 ---
 
