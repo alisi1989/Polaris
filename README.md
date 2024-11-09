@@ -17,6 +17,7 @@ In this README file, we present VCF-to-Hap-Map_Polarized_Fast, a tool designed t
 Create an ancestral alleles file in tab-delimited format. The file should contain positions and their corresponding ancestral alleles.
 The Homo sapiens ancestral alleles are already provided in the repository. Source: Ensemble Homo sapiens hg38. 
 
+`Format`
 
 <pre>
 Position  Allele
@@ -85,6 +86,8 @@ Example:
 bcftools view -e 'ID=="."' -Oz -o filtered.vcf.gz input.vcf.gz
 Chromosome Consistency: Make sure that the chromosome naming in your VCF file matches that in your genetic map file (e.g., chr22).
 Phasing: If your VCF file is not phased, use a phasing tool like Shapeit4 or Eagle before running this software.
+
+---
 
 `License`
 
