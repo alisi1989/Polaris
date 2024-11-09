@@ -3,12 +3,12 @@
 In this README file, we present VCF-to-Hap-Map_Polarized_Fast, a tool designed to process phased VCF files and generate haplotype and map files, with polarization based on ancestral alleles. This document will guide users through the process of preparing the input files, running the tool, and understanding the output.
 1. Prepare Input Datasets
 
-**Phased VCF File**
+1. **Phased VCF File**
 
-'Requirement:' The VCF file must be phased using tools like Shapeit4, Eagle, or similar phasing software.
-'Format:' The VCF should be gzipped (.vcf.gz) and properly indexed if necessary.
-'Important:' Ensure that all variants have valid rsIDs (no missing or empty IDs). Variants with missing IDs (e.g., .) may cause issues in downstream analyses.
-'Chromosome Annotation:' For the hg38 build, chromosomes should be annotated with chr followed by the chromosome number (e.g., chr1, chr2, ..., chr22).
+`Requirement:` The VCF file must be phased using tools like Shapeit4, Eagle, or similar phasing software.
+`Format:` The VCF should be gzipped (.vcf.gz) and properly indexed if necessary.
+`Important:` Ensure that all variants have valid rsIDs (no missing or empty IDs). Variants with missing IDs (e.g., `.`) may cause issues in downstream analyses.
+`Chromosome Annotation:` For the hg38 build, chromosomes should be annotated with chr followed by the chromosome number (e.g., `chr1`, `chr2`, `...,` `chr22`).
 
 **Ancestral Alleles File**
 
@@ -16,10 +16,9 @@ Create an ancestral alleles file in tab-delimited format. The file should contai
 The Homo sapiens ancestral alleles are already provided in the repository. Soure: Ensemble Homo sapiens hg38. 
 
 
-'Position  Allele'
+`Position  Allele`
 
-
-'Example:'
+`Example:`
 
 <pre>
 16050075  G
@@ -27,17 +26,18 @@ The Homo sapiens ancestral alleles are already provided in the repository. Soure
 16055683  T
 </pre>
 
-'Genetic Map File'
+`Genetic Map File`
 
-Prepare a genetic map file containing physical positions and their corresponding genetic distances.
+Genetic map file containing physical positions and their corresponding genetic distances.
+Genetic map files are already provided in the repository. 
 
-'Format:'
+`Format:`
 
 <pre>
 PhysicalPosition  GeneticDistance
   </pre>
   
-'Example:'
+`Example:`
 
 <pre>
 16050000  0.123456
@@ -45,7 +45,7 @@ PhysicalPosition  GeneticDistance
 16070000  0.128901
 </pre>
 
-2. Run VCF-to-Hap-Map_Polarized_Fast
+2. **Run VCF-to-Hap-Map_Polarized_Fast**
 
 The tool is provided as a standalone executable. You can run it directly with the appropriate command-line arguments.
 Command-Line Usage
