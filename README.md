@@ -3,6 +3,7 @@
 In this README file, we present VCF-to-Hap-Map_Polarized_Fast, a tool designed to process phased VCF files and generate haplotype and map files, with polarization based on ancestral alleles. This document will guide users through the process of preparing the input files, running the tool, and understanding the output.
 
 ---
+**Input Files**
 
 1. **VCF File**
 
