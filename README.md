@@ -79,11 +79,14 @@ usage: vcf_to_hap_map_polarized_fast [-h] -v VCF -o OUTPUT -c CHROMOSOME --ances
 ./vcf_to_hap_map_polarized_fast -v Dataset-Test/Finnish_1KG.vcf.gz -c chr2 --ancestor Ancestor-Alleles/ancestor_alleles_chr2.txt --genetic-map Genetic-Map/genetic_map_chr2.txt -o Output/Finnish_chr2
 </pre>
 
+---
+
 **Output Files**
 
 After running the tool, the following output files will be generated:
-<output>.hap: The haplotype file containing the polarized genotypes (0/1) for each haplotype.
-<output>.map: The genetic map file with interpolated genetic distances.
+
+`<output>.hap:` The haplotype file containing the polarized genotypes (0/1) for each haplotype.
+`<output>.map:` The genetic map file with interpolated genetic distances.
 
 ---
 
