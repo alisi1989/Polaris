@@ -1,0 +1,13 @@
+./selscan --ehh rs41380347 --ehh-win 2000000 --hap Output/Bedouin_HGDO_chr2.hap --map Output/Bedouin_HGDO_chr2.map --out Output/Bedouin_chr2 
+v2.0.2
+Calculating Input filename: Output/Bedouin_HGDO_chr2.hap
+Map filename: Output/Bedouin_HGDO_chr2.map
+Output file: Output/Bedouin_chr2.ehh.rs41380347.out
+Threads: 1
+Scale parameter: 20000
+Max gap parameter: 200000
+EHH cutoff value: 0.05
+Phased: yes
+Alt flag set: no
+--skip-low-freq set. Removing all variants < 0.05.
+Removed 348622 low frequency variants.
