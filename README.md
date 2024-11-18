@@ -10,7 +10,7 @@ In this README file, we present Panderas, a tool designed to process phased VCF 
 
 `Requirement:` The VCF file must be phased using tools like Shapeit4, Eagle, or similar phasing software.
 
-`Format:` The VCF should be gzipped (.vcf.gz) and properly indexed if necessary.
+`Format:` The VCF should be gzipped (.vcf.gz) and properly indexed.
 
 `Important:` Ensure that all variants have valid rsIDs (no missing or empty IDs). Variants with missing IDs (e.g., `.`) may cause issues in downstream analyses.
 
@@ -76,7 +76,7 @@ usage: vcf_to_hap_map_polarized_fast [-h] -v VCF -o OUTPUT -c CHROMOSOME --ances
 
 `Example Command`
 <pre>
-./vcf_to_hap_map_polarized_fast -v Dataset-Test/Finnish_1KG.vcf.gz -c chr2 --ancestor Ancestor-Alleles/ancestor_alleles_chr2.txt --genetic-map Genetic-Map/genetic_map_chr2.txt -o Output/Finnish_chr2
+./Pandoras -v Dataset-Test/Finnish_1KG.vcf.gz -c chr2 --ancestor Ancestor-Alleles/ancestor_alleles_chr2.txt --genetic-map Genetic-Map/genetic_map_chr2.txt -o Output/Finnish_chr2
 </pre>
 
 ---
