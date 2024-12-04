@@ -40,7 +40,7 @@ The Polaris package can be downloaded to users’ local computers by clicking on
 
 Users will then need to ensure the software is executable with the following command:
 
-`chmod +x Panderas`
+`chmod +x Panderas/Panderas`
 
 ---
 
@@ -131,7 +131,7 @@ Panderas also provides error messages to help identify issues with input files a
 ### `Example of Usage`
 
 ```
-./Panderas -v Example/Finnish_1KG.vcf.gz -c chr2 --ancestor Ancestor-Alleles/ancestor_alleles_chr2.txt --genetic-map Genetic-Map/genetic_map_chr2.txt -o Output/Finnish_chr2
+./Panderas/Panderas -v Example/1.Phased_VCF/Finnish_chr2_1KG.vcf.gz -c chr2 --ancestor Ancestor-Alleles/Ancestor_Alleles_chr2.txt --genetic-map Genetic-Map/mod_genetic_map_GRCh38_chr2.txt -o Example/2.Input_selscan_HaploSweep/Finnish_1KG_chr2
 ```
 
 Additional information about these arguments also can be accessed using the following command: 
@@ -139,7 +139,7 @@ Additional information about these arguments also can be accessed using the foll
 ### `Help Command`
 
 ```
-./Panderas --help
+./Panderas/Panderas --help
 ```
 
 Finally, regarding the genetic map, the Panderas software will perform a linear interpolation to determine the genetic position (centimorgans, cM) of loci in a given dataset based on the physical position (i.e., genomic coordinate) and the corresponding genetic position in the generic PLINK map file (i.e., the reference). Specifically, Panderas will search for the two physical and genetic positions in the PLINK reference file that flank a query locus in a given dataset and calculate the genetic position for that query locus using information in the reference.
@@ -172,6 +172,7 @@ The normalized output files from these programs will serve as input files for Pa
   - [Basic Command-Line Usage](#basic-command-line-usage)
   - [Example of Usage](#example-of-usage)
   - [Manhattan plot with threshold line and SNP annotations](#manhattan-plot-with-threshold-line-and-snp-annotations)
+  - Manhattan plot with threshold line SNPs and Genes annotations (#manhattan-plot-with-threshold-line-snps-and-genes-annotations)
 - [EHH Plotting](#ehh-plotting)
   - [Basic Command-Line Usage](#basic-command-line-usage-1)
   - [Example of Usage](#example-of-usage-1)
@@ -191,7 +192,7 @@ clicking on Polaris under "Releases" in our Github repository (https://github.co
 
 Users will need to ensure that the software is executable by running the following command:
 
-`chmod +x Panderas_Plots`
+`chmod +x Panderas_Plots/Panderas_Plots`
 
 ## Requirements
 
@@ -214,7 +215,7 @@ Panderas_Plots also provides error messages to help identify issues with input f
 ### `Example of Usage:`
 
 ```
-./Panderas_Plots manhattan --alg selscan --input selscan_ihs.out --chr 2 --output selscan_manhattan.pdf
+./Panderas_Plots/Panderas_Plots manhattan --alg selscan --input Example/3.Output_selscan_HaploSweep/selscan/Finnish_1KG_chr2.ihs.out.100bins.norm --chr 2 --output Example/4.Output_iHS_EHH_Plots/selscan_manhattan.pdf
 ```
 
 Notably, Panderas_Plots also offers an array of options to visualize and annotate the numerical output of selscan and/or HaploSweep. For example, 
@@ -222,14 +223,14 @@ Notably, Panderas_Plots also offers an array of options to visualize and annotat
 ### Manhattan plot with threshold line and SNP annotations
 
 ```
-./Panderas_Plots manhattan --alg haplosweep --input haplosweep_ihs.out --chr 2 --output haplosweep_manhattan.pdf --threshold-line 2.0 --color-line red --rs-annot 2.0 --label-annot y --statistic iHS
+./Panderas_Plots/Panderas_Plots manhattan --alg haplosweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/Finnish_norm.txt --chr 2 --output Example/4.Output_iHS_EHH_Plots/haplosweep_manhattan.png --threshold-line 2.0 --color-line red --rs-annot 2.0 --label-annot y --statistic iHS
 ```
 
 where users can select options to create a threshold line and annotate SNPs in addition to the required arguments described above. In particular, users can specify: 1) an iHS Y-value with the `"--threshold-line"` flag for outlier values (e.g., 2); 2) a specific color of the threshold line using the `"--color-line"` flag (e.g., red); 3) threshold for annotating statistics with rs identifiers in absolute numbers (e.g., 2, 3, 4) with `"--rs-annot"` flag; and 4) specify (yes or no) if users want to add labels (rs identifiers) to dots with the `"--label-annot"` flag. Because labels can overlap, this flag gives users the option to remove the labels for a cleaner plot, if they prefer.
 
 Other noteworthy features include: i) changing the size and/or color of each dot in Manhattan plots with the `--size–dots` flag; and ii) creating a list of genes harboring outlier iHS values in a *.txt file using `"--gene–annot"`. 
 
-For this latter feature (`"--gene–annot"`), if users wish to include gene annotations in the Manhattan plots, they will need to prepare a separate gene annotation text file in tab-delimited format:
+For this latter feature (`"--gene–annot"`), if users wish to include gene annotations in the Manhattan plots, they will need to prepare a separate text file, or use the one already provided in this repository in the `Gene-Reference` folder, for the gene annotation in tab-delimited format and use the command `--gene-file` followed by the .txt file:
 
 ```
 chr    start    end    gene
@@ -240,7 +241,14 @@ c)    end: End position of the gene (e.g., 135850000).
 d)    gene: Gene name (e.g., MCM6).
 ```
 
-Although we provide a reference file to annotate by gene name (HG38_UCSC_refGene_filtered .txt), users may want to use another reference file. If so, this reference file should be formatted as above. However, it is our recommendation that users utilize the gene reference file that we provide.
+### Manhattan plot with threshold line SNPs and Genes annotations
+
+We provide a reference file to annotate by gene name (HG38_UCSC_refGene_filtered.txt), users may want to use another reference file. If so, this reference file should be formatted as above. However, it is our recommendation that users utilize the gene reference file that we provide.
+
+
+```
+./Panderas_Plots/Panderas_Plots manhattan --alg haplosweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/Finnish_norm.txt --chr 2 --output Example/4.Output_iHS_EHH_Plots/haplosweep_manhattan_genes_annotated.png --threshold-line 4.0 --color-line red --rs-annot 4.0 --label-annot y --statistic iHS --gene-file Gene-Reference/HG38_UCSC_refGene_filtered.txt --gene-annot 4.0
+```
 
 Users can also access a more complete list of plotting features with the following command:
 
