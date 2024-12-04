@@ -16,8 +16,8 @@ The Polaris package consists of two distinct programs written in the C-Python la
   - [Basic Format](#basic-format-1)
   - [Example Format](#example-format-1)
 - [Reference Genetic Map File](#reference-genetic-map-file)
-  - [Basic Format](#basic-format-1)
-  - [Example Format](#example-format-1)
+  - [Basic Format](#basic-format-2)
+  - [Example Format](#example-format-2)
 - [Run the Panderas software](#run-the-panderas-software)
   - [Command-Line Usage](#command-line-usage)
   - [Example of Usage](#example-of-usage)
@@ -94,35 +94,37 @@ Position  Allele
 16055683  T
 ```
 
-3. Reference Genetic Map File
-The PLINK genetic map files (i.e., reference maps from https://bochet.gcc.biostat.washington.edu/beagle/genetic_maps/) are provided in DropBox (https://www.dropbox.com/scl/fo/b3a9z16sqjvksprqudlpg/ACv4xl3Nk9HHZP0m4Em0CVI?rlkey=hn23fb1j5vie5d84ss3hpf8nv&st=rnm2ve4n&dl=0). Genetic map files should contain the physical position and genetic position in white space delimited columns. 
+## Reference Genetic Map File
+
+The PLINK genetic map files (i.e., reference maps from https://bochet.gcc.biostat.washington.edu/beagle/genetic_maps/) are provided in DropBox `(https://www.dropbox.com/scl/fo/b3a9z16sqjvksprqudlpg/ACv4xl3Nk9HHZP0m4Em0CVI?rlkey=hn23fb1j5vie5d84ss3hpf8nv&st=rnm2ve4n&dl=0)`. Genetic map files should contain the genetic position and physical position in white space delimited columns. 
 
 `Basic Format:`
 
 ```
-ChromosomeNumber rsidentifier PhysicalPosition  GeneticDistance
+GeneticDistance PhysicalPosition
 ```
+
   
 `Example of Format:`
 
-</code></pre>
-chr2 rs1 16050000  0.123456
-chr2 rs2 16060000  0.125678
-chr2 rs3 16070000  0.128901
-</code></pre>
+```
+0.123456 16050000  
+0.125678 16060000  
+0.128901 16070000  
+```
 
-Moreover, users should ensure that the chromosome name in the PLINK reference map file matches the chromosome name in the vcf file (e.g., "chr22").
 
-**Run the Panderas software**
+## Run the Panderas software
 
 The Panderas software is provided as a standalone executable file. Users can run this program as follows:
+
 `Command-Line Usage`
 
-</code></pre>
-./Panderas.py -v [argument] -o [argument] -c [argument] –-ancestor [argument] –-genetic-map [argument]
-</code></pre>
+```
+./Panderas -v [argument] -o [argument] -c [argument] –-ancestor [argument] –-genetic-map [argument]
+```
 
-where users must provide: 1) the name of the gzipped input vcf file with the extension (e.g., input_file.vcf.gz) after the `"-v"` flag; 2) the prefix of an output filename with no file extension (e.g., "output_file") after the "-o" flag; 3) the chromosome number to extract using the -c flag; 4) the name of the ancestral allele file with the *.txt extension after the "-–ancestor" flag;  5) the name of the reference genetic map file (e.g., mod_genetic_map_GRCh38_chr2.txt) after the "-–genetic-map" flag; and 6) the prefix of an output filename (without a file extension) after the "--output" flag. 
+where users must provide: 1) the name of the gzipped input vcf file with the extension (e.g., input_file.vcf.gz) after the `"-v"` flag; 2) the prefix of an output filename with no file extension (e.g., "output_file") after the `"-o"` flag; 3) the chromosome number to extract using the `-c` flag; 4) the name of the ancestral allele file with the *.txt extension after the `"-–ancestor"` flag;  5) the name of the reference genetic map file (e.g., mod_genetic_map_GRCh38_chr2.txt) after the `"-–genetic-map"` flag
 
 The runtime for generating the *.hap and *.map files for alleles on Chromosome 2 in the Finnish population was 15 minutes. Please note that this runtime could vary across populations and chromosomes. 
 
@@ -130,9 +132,9 @@ Panderas also provides error messages to help identify issues with input files a
 
 `Example of Usage`
 
-</code></pre>
+```
 ./Panderas -v Example/Finnish_1KG.vcf.gz -c chr2 --ancestor Ancestor-Alleles/ancestor_alleles_chr2.txt --genetic-map Genetic-Map/genetic_map_chr2.txt -o Output/Finnish_chr2
-</code></pre>
+```
 
 Additional information about these arguments also can be accessed using the following command: 
 
@@ -142,15 +144,15 @@ Finally, regarding the genetic map, the Panderas software will perform a linear 
 
 ---
 
-4. **Output Files**
+## Output Files
 
 After running Panderas, the following output files will be generated:
 
-</code></pre>
+```
 `*.hap:` The haplotype file contains the polarized alleles (0/1) for each haplotype.
 
 `*.map:` The genetic map file contains the interpolated genetic positions.
-</code></pre>
+```
 
 The output files are now ready for direct use as input file by selscan and/or HaploSweep. More specific information on the usage of selscan and/or HaploSweep can be found at https://github.com/szpiech/selscan and https://github.com/ChenHuaLab/HaploSweep, respectively. 
 
@@ -199,9 +201,9 @@ To visualize haplotype-based statistics along a given chromosome, users will exe
 
 `Basic Command-Line Usage: `
 
-</code></pre>
+```
 ./Panderas_Plots.py manhattan –-alg [argument] --input [argument] --chr [argument] --output [argument] 
-</code></pre>
+```
 
 where users will provide: 1) the "manhattan" function before the "--alg" flag; 2) the algorithm used to generate the haplotype-based statistic (either selscan or haplosweep in lowercase letters) after the "--alg" flag;  3) the input file from selscan or HaploSweep with the file extension (e.g., Finnish_1KG_chr2.ihs.out.100bins.norm) after the "--input" flag; 4) the chromosome analyzed (e.g., "2" or "chr 2") after the "--chr" flag; and 5) the output filename (with either a pdf, svg, eps, or png extension at the end of the filename) after the "--output" flag. 
 
@@ -252,9 +254,9 @@ To visualize the decay of haplotype homozygosity along chromosomes, users will e
 
 `Basic Command-Line Usage: `
 
-</code></pre>
+```
 ./Panderas_Plots ehh --alg {selscan,haplosweep} --input INPUT --output OUTPUT 
-</code></pre>
+```
 
 where users will provide: 1) the "ehh" function before the "--alg" flag; 2) the algorithm used to generate the haplotype-based statistic (either selscan or haplosweep in lowercase letters) after the "--alg" flag 3) the input created by selscan or HaploSweep (with the extension) after the "--input" flag; 4) the user-specified output filename (with either a pdf, svg, eps, or png extension at the end of the filename) after the "--output" flag; and. 
 
@@ -264,15 +266,15 @@ Panderas_Plots will also provide error messages to help identify issues with inp
 
 Plotting EHH from Selscan Output
 
-</code></pre>
+```
 ./Panderas_Plots ehh --alg selscan --input selscan_ehh.out --output selscan_ehh_plot.pdf
-</code></pre>
+```
 
 Plotting EHH from HaploSweep Output
 
-</code></pre>
+```
 ./Panderas_Plots ehh --alg haplosweep --input haplosweep_ehh.out --output haplosweep_ehh_plot.pdf 
-</code></pre>
+```
 
 INCLUDE IMAGE HERE
 
