@@ -277,13 +277,13 @@ Panderas_Plots will also provide error messages to help identify issues with inp
 #### `Plotting EHH from Selscan Output`
 
 ```
-./Panderas_Plots/Panderas_Plots ehh --alg selscan --input selscan_ehh.out --output selscan_ehh_plot.pdf
+./Panderas_Plots/Panderas_Plots ehh --alg selscan --input Example/3.Output_selscan_HaploSweep/selscan/Finnish_chr2.ehh.rs4988235.out --output Example/4.Output_iHS_EHH_Plots/Finnish_ehh_plot_rs4988235_selscan.pdf
 ```
 
 #### `Plotting EHH from HaploSweep Output`
 
 ```
-./Panderas_Plots/Panderas_Plots ehh --alg HaploSweep --input haplosweep_ehh.out --output haplosweep_ehh_plot.pdf 
+./Panderas_Plots/Panderas_Plots ehh --alg HaploSweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/ehh_rs4988235.txt --output Example/4.Output_iHS_EHH_Plots/Finnish_ehh_plot_rs4988235_HaploSweep.pdf
 ```
 
 
