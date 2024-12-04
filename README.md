@@ -63,13 +63,13 @@ In cases where the vcf file contains variants with missing rs identifiers (e.g.,
 
 `Command-line Usage: ` 
 
-</code></pre>
+```bash
 ./Fill_._rsunknown.py –-input [argument] --output [argument]
-</code></pre>
+```
 
 where users will provide: 1) the path to the gzipped input vcf file after the "--input" flag; and 2) the path to where the gzipped output vcf file will be saved after the "--output" flag. 
 
-`Example of Usage: `
+`Example of Usage:`
 
 ```bash
 ./Fill_._rsunknown.py –-input path_to_folder/Dataset-Test/ --output path_to_folder/Output/
@@ -82,26 +82,26 @@ Given the space limitations on GitHub, the Homo_sapiens_hg38_reference file from
 
 ### `Basic Format`
 
-</pre>
+```bash
 Position  Allele
-</pre>
+```
 
 ### `Example of Format:`
 
-</code></pre>
+```
 16050075  G
 16050103  A
 16055683  T
-</code></pre>
+```
 
 3. Reference Genetic Map File
 The PLINK genetic map files (i.e., reference maps from https://bochet.gcc.biostat.washington.edu/beagle/genetic_maps/) are provided in DropBox (https://www.dropbox.com/scl/fo/b3a9z16sqjvksprqudlpg/ACv4xl3Nk9HHZP0m4Em0CVI?rlkey=hn23fb1j5vie5d84ss3hpf8nv&st=rnm2ve4n&dl=0). Genetic map files should contain the physical position and genetic position in white space delimited columns. 
 
 `Basic Format:`
 
-</code></pre>
+```
 ChromosomeNumber rsidentifier PhysicalPosition  GeneticDistance
-</code></pre>
+```
   
 `Example of Format:`
 
