@@ -13,8 +13,8 @@ The Polaris package consists of two distinct programs written in the C-Python la
 - [Installation of Panderas](#installation-of-panderas)
 - [Requirements for Panderas](#requirements-for-panderas)
 - [Ancestral allele file](#ancestral-allele-file)
-  - [Basic Format](#basic-format)
-  - [Example Format](#example-format)
+  - [Basic Format](#basic-format-1)
+  - [Example Format](#example-format-1)
 - [Reference Genetic Map File](#reference-genetic-map-file)
   - [Basic Format](#basic-format-1)
   - [Example Format](#example-format-1)
@@ -71,9 +71,9 @@ where users will provide: 1) the path to the gzipped input vcf file after the "-
 
 `Example of Usage: `
 
-</pre>
+```bash
 ./Fill_._rsunknown.py –-input path_to_folder/Dataset-Test/ --output path_to_folder/Output/
-</pre>
+```
 
 ## Ancestral allele file
 
