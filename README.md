@@ -167,96 +167,97 @@ The normalized output files from these programs will serve as input files for Pa
 
 **Table of Contents**
 
-•    Overview
-•    Installation
-•    Requirements
-•    Manhattan Plotting 
-o    Basic-Command-Line Options
-•    Example of Usage
-o    Manhattan plot with threshold line and SNP annotations
-•    EHH Plotting
-o    Basic-Command-Line Options
-o    Example of Usage
-    Plotting EHH from Selscan Output
-    Plotting EHH from HaploSweep Output
-•    License
-•    Contact
+- [Overview](#overview)
+- [Installation](#installation)
+- [Requirements](#requirements)
+- [Manhattan Plotting](#manhattan-plotting)
+  - [Basic Command-Line Usage](#basic-command-line-usage)
+  - [Example of Usage](#example-of-usage)
+  - [Manhattan plot with threshold line and SNP annotations](#manhattan-plot-with-threshold-line-and-snp-annotations)
+- [EHH Plotting](#ehh-plotting)
+  - [Basic Command-Line Usage](#basic-command-line-usage-1)
+  - [Example of Usage](#example-of-usage-1)
+    - [Plotting EHH from Selscan Output](#plotting-ehh-from-selscan-output)
+    - [Plotting EHH from HaploSweep Output](#plotting-ehh-from-haplosweep-output)
+- [License](#license)
+- [Contact](#contact)
 
 
-**Overview** 
+## Overview
 The Panderas_Plot software offers an array of options to visualize and annotate the numerical output of selscan and HaploSweep. Specifically, it creates Manhattan plots of standardized statistics and EHH line graphs showing the decay of haplotype homozygosity on chromosomes around ancestral and derived alleles.
 
-**Installation**
+## Installation
+
 The Polaris package can be downloaded to users’ local computers by 
-clicking on Polaris under "Releases" in our Github repository (https://github.com/alisi1989/Polaris). Alternatively, users can download the Polaris package from DropBox (https://www.dropbox.com/scl/fo/2s6hm1owv26wivrn29saw/AGkE6YM91jp_DzJlgNScaSY?rlkey=pxe1i6ytbcsup7jv6h1q5fq3m&st=b1dyusit&dl=0). To unzip the file from GitHub (the same file from DropBox will be uncompressed), type "unzip Polaris_main.zip" at the command line prompt (typically indicated by a ">" symbol), and the uncompressed "Polaris_Main" folder will appear. Using the command-line interface in the Terminal window, users will change the current working directory to the "Panderas_Plots" directory where the software is located.
+clicking on Polaris under "Releases" in our Github repository (https://github.com/alisi1989/Polaris). Alternatively, users can download the Polaris package from DropBox `(https://www.dropbox.com/scl/fo/2s6hm1owv26wivrn29saw/AGkE6YM91jp_DzJlgNScaSY?rlkey=pxe1i6ytbcsup7jv6h1q5fq3m&st=b1dyusit&dl=0)`. To unzip the file from GitHub (the same file from DropBox will be uncompressed), type `"unzip Polaris_main.zip"` at the command line prompt (typically indicated by a ">" symbol), and the uncompressed `"Polaris_Main"` folder will appear. Using the command-line interface in the Terminal window, users will change the current working directory to the `"Panderas_Plots"` directory where the software is located.
 
 Users will need to ensure that the software is executable by running the following command:
 
-chmod +x Panderas_Plots
+`chmod +x Panderas_Plots`
 
-**Requirements**
+## Requirements
 
 The normalized output files from selscan and/or HaploSweep (e.g., Finnish_1KG_chr2.ihs.out.100bins.norm from selscan and Finnish_norm.txt from HaploSweep) for iHS calculation. Please note that these input files must be uncompressed prior to use. 
 
-
-**Manhattan Plotting**
+## Manhattan Plotting
 
 To visualize haplotype-based statistics along a given chromosome, users will execute Panderas_Plots as follows:
 
-`Basic Command-Line Usage: `
+### `Basic Command-Line Usage: `
 
 ```
-./Panderas_Plots.py manhattan –-alg [argument] --input [argument] --chr [argument] --output [argument] 
+./Panderas_Plots manhattan –-alg [argument] --input [argument] --chr [argument] --output [argument] 
 ```
 
-where users will provide: 1) the "manhattan" function before the "--alg" flag; 2) the algorithm used to generate the haplotype-based statistic (either selscan or haplosweep in lowercase letters) after the "--alg" flag;  3) the input file from selscan or HaploSweep with the file extension (e.g., Finnish_1KG_chr2.ihs.out.100bins.norm) after the "--input" flag; 4) the chromosome analyzed (e.g., "2" or "chr 2") after the "--chr" flag; and 5) the output filename (with either a pdf, svg, eps, or png extension at the end of the filename) after the "--output" flag. 
+where users will provide: 1) the `"manhattan"` function before the `"--alg"` flag; 2) the algorithm used to generate the haplotype-based statistic (either selscan or haplosweep in lowercase letters) after the `"--alg"` flag;  3) the input file from selscan or HaploSweep with the file extension (e.g., Finnish_1KG_chr2.ihs.out.100bins.norm) after the `"--input"` flag; 4) the chromosome analyzed (e.g., "2" or "chr 2") after the `"--chr"` flag; and 5) the output filename (with either a pdf, svg, eps, or png extension at the end of the filename) after the `"--output"` flag. 
 
 Panderas_Plots also provides error messages to help identify issues with input files or command-line arguments.
 
-`Example of Usage: `
+### `Example of Usage: `
 
-<pre>
+```
 ./Panderas_Plots manhattan --alg selscan --input selscan_ihs.out --chr 2 --output selscan_manhattan.pdf
-</pre>
+```
 
 Notably, Panderas_Plots also offers an array of options to visualize and annotate the numerical output of selscan and/or HaploSweep. For example, 
 
+### Manhattan plot with threshold line and SNP annotations
 
-
-
-
-Manhattan plot with threshold line and SNP annotations
-
-<pre>
+```
 ./Panderas_Plots manhattan --alg haplosweep --input haplosweep_ihs.out --chr 2 --output haplosweep_manhattan.pdf --threshold-line 2.0 --color-line red --rs-annot 2.0 --label-annot y --statistic iHS
-<pre>
+```
 
-where users can select options to create a threshold line and annotate SNPs in addition to the required arguments described above. In particular, users can specify: 1) an iHS Y-value with the "--threshold-line" flag for outlier values (e.g., 2); 2) a specific color of the threshold line using the "--color-line" flag (e.g., red); 3) threshold for annotating statistics with rs identifiers in absolute numbers (e.g., 2, 3, 4) with "--rs-annot" flag; and 4) specify (yes or no) if users want to add labels (rs identifiers) to dots with the "--label-annot" flag. Because labels can overlap, this flag gives users the option to remove the labels for a cleaner plot, if they prefer.
+where users can select options to create a threshold line and annotate SNPs in addition to the required arguments described above. In particular, users can specify: 1) an iHS Y-value with the `"--threshold-line"` flag for outlier values (e.g., 2); 2) a specific color of the threshold line using the `"--color-line"` flag (e.g., red); 3) threshold for annotating statistics with rs identifiers in absolute numbers (e.g., 2, 3, 4) with `"--rs-annot"` flag; and 4) specify (yes or no) if users want to add labels (rs identifiers) to dots with the `"--label-annot"` flag. Because labels can overlap, this flag gives users the option to remove the labels for a cleaner plot, if they prefer.
 
-Other noteworthy features include: i) changing the size and/or color of each dot in Manhattan plots with the --size–dots flag; and ii) creating a list of genes harboring outlier iHS values in a *.txt file using "--gene–annot". 
+Other noteworthy features include: i) changing the size and/or color of each dot in Manhattan plots with the `--size–dots` flag; and ii) creating a list of genes harboring outlier iHS values in a *.txt file using `"--gene–annot"`. 
 
-For this latter feature ("--gene–annot"), if users wish to include gene annotations in the Manhattan plots, they will need to prepare a separate gene annotation text file in tab-delimited format:
+For this latter feature (`"--gene–annot"`), if users wish to include gene annotations in the Manhattan plots, they will need to prepare a separate gene annotation text file in tab-delimited format:
 
+```
 chr    start    end    gene
 
 a)    chr: Chromosome number (e.g., chr2).
 b)    start: Start position of the gene (e.g., 135800000).
 c)    end: End position of the gene (e.g., 135850000).
 d)    gene: Gene name (e.g., MCM6).
+```
 
 Although we provide a reference file to annotate by gene name (HG38_UCSC_refGene_filtered .txt), users may want to use another reference file. If so, this reference file should be formatted as above. However, it is our recommendation that users utilize the gene reference file that we provide.
 
 Users can also access a more complete list of plotting features with the following command:
 
-./Panderas_Plots.py --help
+```
+./Panderas_Plots --help
+```
 
- 
+---
 
-EHH Plotting
+
+## EHH Plotting
 
 To visualize the decay of haplotype homozygosity along chromosomes, users will execute Panderas_Plots as follows:
 
-`Basic Command-Line Usage: `
+### `Basic Command-Line Usage: `
 
 ```
 ./Panderas_Plots ehh --alg {selscan,haplosweep} --input INPUT --output OUTPUT 
@@ -266,31 +267,32 @@ where users will provide: 1) the "ehh" function before the "--alg" flag; 2) the 
 
 Panderas_Plots will also provide error messages to help identify issues with input files or command-line arguments.
 
-`Examples of Usage: `
+### `Examples of Usage: `
 
-Plotting EHH from Selscan Output
+#### `Plotting EHH from Selscan Output`
 
 ```
 ./Panderas_Plots ehh --alg selscan --input selscan_ehh.out --output selscan_ehh_plot.pdf
 ```
 
-Plotting EHH from HaploSweep Output
+#### `Plotting EHH from HaploSweep Output`
 
 ```
 ./Panderas_Plots ehh --alg haplosweep --input haplosweep_ehh.out --output haplosweep_ehh_plot.pdf 
 ```
 
-INCLUDE IMAGE HERE
 
 Recommendations and Notes
-•    Consistent Chromosome Naming: Ensure that chromosome identifiers are consistent across your input files (e.g., "chr2" or "2").
+
+•    Consistent Chromosome Naming: Ensure that chromosome identifiers are consistent across your input files (e.g., "chr2" or "2")    
+
 •    Highlighting SNPs: To highlight specific SNPs, users are required to create a text file (snps_to_highlight.txt) with one SNP identifier per line. The filename will be entered after the "--snps-to-highlight" flag.
 
-`License`
+## `License`
 
 This project is licensed under the MIT License.
 
-`Contact`
+## `Contact`
 
 For questions or comments, please contact:
 1.    Alessandro Lisi, alisi@usc.edu or on GitHub (alisi1989)
