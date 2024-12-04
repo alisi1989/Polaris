@@ -26,11 +26,11 @@ The Polaris package consists of two distinct programs written in the C-Python la
 
 ---
 
-**Panderas**
+## Panderas
 
 ---
 
-**Overview**
+## Overview
 
 The Panderas software classifies ancestral and derived alleles on chromosomes in phased vcf files for analysis by two haplotype-based programs, selscan and HaploSweep.
 
