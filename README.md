@@ -38,7 +38,7 @@ The Panderas software classifies ancestral and derived alleles on chromosomes in
 
 ## Installation of Panderas
 
-The Polaris package can be downloaded to users’ local computers by clicking on Polaris under "Releases" in our Github repository `(https://github.com/alisi1989/Polaris)`. Alternatively, users can download the Polaris package from DropBox `(https://www.dropbox.com/scl/fo/2s6hm1owv26wivrn29saw/AGkE6YM91jp_DzJlgNScaSY?rlkey=pxe1i6ytbcsup7jv6h1q5fq3m&st=b1dyusit&dl=0)`. To unzip the file from GitHub (the same file from DropBox will be uncompressed), type `"unzip Polaris_main.zip"` at the command line prompt `(typically indicated by a ">" symbol)`, and the uncompressed `"Polaris_Main"` folder will appear. At the command-line prompt in the Terminal window, users will change the current working directory to the "Panderas" directory where the software is located.
+The Polaris package can be downloaded to users’ local computers by clicking on Polaris under "Releases" in our Github repository `(https://github.com/alisi1989/Polaris)`. Alternatively, users can download the Polaris package from DropBox `(https://www.dropbox.com/scl/fo/mlxizft5267vem9u62qkn/AAnM0qX923zPzQBlPX8iteM?rlkey=uezrp4t2waffpj0nmo1evr320&st=0vfb6rcu&dl=0)`. To unzip the file from GitHub (the same file from DropBox will be uncompressed), type `"unzip Polaris.zip"` at the command line prompt `(typically indicated by a ">" symbol)`, and the uncompressed `"Polaris"` folder will appear. At the command-line prompt in the Terminal window, users will change the current working directory to the "Panderas" directory where the software is located.
 
 Users will then need to ensure the software is executable with the following command:
 
@@ -77,7 +77,7 @@ where users will provide: 1) the path to the gzipped input vcf file after the `"
 
 ## Ancestral allele file
 
-Given the space limitations on GitHub, the Homo_sapiens_hg38_reference file from Ensembl for each chromosome (https://ftp.ensembl.org/pub/release-112/fasta/ancestral_alleles/) is stored separately in DropBox (https://www.dropbox.com/scl/fo/0du8z7xoeqs5qqr73qk2s/ADuGddGTZXwUIeZkmQZ-geM?rlkey=chre7oc2fcwpl4bi9p2gab4jb&st=5igiuhrx&dl=0) and are available for downloaded. If users wish to incorporate a different ancestral allele reference file, they will need to make sure the file is in a tab-delimited format (please see below). 
+Given the space limitations on GitHub, the Homo_sapiens_hg38_reference file from Ensembl for each chromosome (https://ftp.ensembl.org/pub/release-112/fasta/ancestral_alleles/) is stored separately in DropBox (https://www.dropbox.com/scl/fo/0du8z7xoeqs5qqr73qk2s/ADuGddGTZXwUIeZkmQZ-geM?rlkey=tn11q5yt2yohyuu5q3ube2x88&st=qzjtapey&dl=0) and are available for downloaded. If users wish to incorporate a different ancestral allele reference file, they will need to make sure the file is in a tab-delimited format (please see below). 
 
 
 ### `Basic Format`
@@ -96,7 +96,7 @@ Position  Allele
 
 ## Reference Genetic Map File
 
-The PLINK genetic map files (i.e., reference maps from https://bochet.gcc.biostat.washington.edu/beagle/genetic_maps/) are provided in DropBox `(https://www.dropbox.com/scl/fo/b3a9z16sqjvksprqudlpg/ACv4xl3Nk9HHZP0m4Em0CVI?rlkey=hn23fb1j5vie5d84ss3hpf8nv&st=rnm2ve4n&dl=0)`. Genetic map files should contain the genetic position and physical position in white space delimited columns. 
+The PLINK genetic map files (i.e., reference maps from https://bochet.gcc.biostat.washington.edu/beagle/genetic_maps/) are provided in DropBox `(https://www.dropbox.com/scl/fo/b3a9z16sqjvksprqudlpg/ACv4xl3Nk9HHZP0m4Em0CVI?rlkey=7dqtaioskwnk2u8mgcx1osui9&st=ultsv8k1&dl=0)`. Genetic map files should contain the genetic position and physical position in white space delimited columns. 
 
 ### `Basic Format:`
 
@@ -189,7 +189,7 @@ The Panderas_Plot software offers an array of options to visualize and annotate 
 ## Installation
 
 The Polaris package can be downloaded to users’ local computers by 
-clicking on Polaris under "Releases" in our Github repository (https://github.com/alisi1989/Polaris). Alternatively, users can download the Polaris package from DropBox `(https://www.dropbox.com/scl/fo/2s6hm1owv26wivrn29saw/AGkE6YM91jp_DzJlgNScaSY?rlkey=pxe1i6ytbcsup7jv6h1q5fq3m&st=b1dyusit&dl=0)`. To unzip the file from GitHub (the same file from DropBox will be uncompressed), type `"unzip Polaris_main.zip"` at the command line prompt (typically indicated by a ">" symbol), and the uncompressed `"Polaris_Main"` folder will appear. Using the command-line interface in the Terminal window, users will change the current working directory to the `"Panderas_Plots"` directory where the software is located.
+clicking on Polaris under "Releases" in our Github repository (https://github.com/alisi1989/Polaris). Alternatively, users can download the Polaris package from DropBox `((https://www.dropbox.com/scl/fo/mlxizft5267vem9u62qkn/AAnM0qX923zPzQBlPX8iteM?rlkey=uezrp4t2waffpj0nmo1evr320&st=0vfb6rcu&dl=0)`. To unzip the file from GitHub (the same file from DropBox will be uncompressed), type `"unzip Polaris.zip"` at the command line prompt (typically indicated by a ">" symbol), and the uncompressed `"Polaris"` folder will appear. Using the command-line interface in the Terminal window, users will change the current working directory to the `"Panderas_Plots"` directory where the software is located.
 
 Users will need to ensure that the software is executable by running the following command:
 
