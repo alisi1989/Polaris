@@ -171,7 +171,7 @@ The normalized output files from these programs will serve as input files for Pa
   - [Basic Command-Line Usage](#basic-command-line-usage)
   - [Example of Usage](#example-of-usage)
   - [Manhattan plot with threshold line and SNP annotations](#manhattan-plot-with-threshold-line-and-snp-annotations)
-  - [Manhattan plot with threshold line SNPs and Genes annotations] (#manhattan-plot-with-threshold-line-snps-and-genes-annotations)
+  - [Manhattan plot with threshold line SNPs and Genes annotations](#manhattan-plot-with-threshold-line-snps-and-genes-annotations)
 - [EHH Plotting](#ehh-plotting)
   - [Basic Command-Line Usage](#basic-command-line-usage-1)
   - [Example of Usage](#example-of-usage-1)
