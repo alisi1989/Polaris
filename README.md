@@ -3,6 +3,7 @@ Polarization of ancestral and derived polymorphic alleles for inferences of exte
 ---
 
 **Overview**
+
 The Polaris package consists of two distinct programs written in the C-Python language: (i) Panderas and (ii) Panderas_Plots that run in a command-line Terminal window on Mac OS X and Linux machines. This document will guide users through the process of applying our software to recode alleles and generate an associated genetic map (*.hap and *map, respectively) for direct use as input files by selscan and HaploSweep. In addition, we provide detailed instructions on how to apply the Panderas_Plots software to create Manhattan plots of standardized statistics and EHH line graphs using an array of command-line options.
 
 ---
