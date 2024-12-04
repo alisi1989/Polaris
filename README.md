@@ -247,7 +247,7 @@ We provide a reference file to annotate by gene name (HG38_UCSC_refGene_filtered
 
 
 ```
-./Panderas_Plots/Panderas_Plots manhattan --alg HaploSweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/Finnish_norm.txt --chr 2 --output Example/4.Output_iHS_EHH_Plots/haplosweep_manhattan_genes_annotated.png --threshold-line 4.0 --color-line red --rs-annot 4.0 --label-annot y --statistic iHS --gene-file Gene-Reference/HG38_UCSC_refGene_filtered.txt --gene-annot 4.0
+./Panderas_Plots/Panderas_Plots manhattan --alg HaploSweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/Finnish_norm.txt --chr 2 --output Example/4.Output_iHS_EHH_Plots/haplosweep_manhattan_genes_annotated.png --threshold-line 2.0 --color-line red --rs-annot 4.0 --label-annot y --statistic iHS --gene-file Gene-Reference/HG38_UCSC_refGene_filtered.txt --gene-annot 4.0
 ```
 
 Users can also access a more complete list of plotting features with the following command:
