@@ -10,19 +10,19 @@ The Polaris package consists of two distinct programs written in the C-Python la
 
 **Table of Contents**
 
-•    `Installation`
-•    `Requirements`
-•    `Ancestral allele file`
-o    `B  asic Format`
-o    `Example Format`
-•    `Reference Genetic Map File`
-o    `Basic Format`
-o    `Example Format`
-•    **Run the Panderas software**
-o    `Command-Line Usage`
-o    `Example of Usage`
-o    `python Panderas.py --help`
-•    4. **Output Files**
+- `Installation`
+- `Requirements`
+- `Ancestral allele file`
+  - `B  asic Format`
+  - `Example Format`
+- `Reference Genetic Map File`
+  - `Basic Format`
+  - `Example Format`
+- **Run the Panderas software**
+  - `Command-Line Usage`
+  - `Example of Usage`
+  - `./Panderas --help`
+- 4. **Output Files**
 
 ---
 **Panderas**
