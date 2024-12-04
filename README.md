@@ -247,13 +247,13 @@ We provide a reference file to annotate by gene name (HG38_UCSC_refGene_filtered
 
 
 ```
-./Panderas_Plots/Panderas_Plots manhattan --alg haplosweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/Finnish_norm.txt --chr 2 --output Example/4.Output_iHS_EHH_Plots/haplosweep_manhattan_genes_annotated.png --threshold-line 4.0 --color-line red --rs-annot 4.0 --label-annot y --statistic iHS --gene-file Gene-Reference/HG38_UCSC_refGene_filtered.txt --gene-annot 4.0
+./Panderas_Plots/Panderas_Plots manhattan --alg HaploSweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/Finnish_norm.txt --chr 2 --output Example/4.Output_iHS_EHH_Plots/haplosweep_manhattan_genes_annotated.png --threshold-line 4.0 --color-line red --rs-annot 4.0 --label-annot y --statistic iHS --gene-file Gene-Reference/HG38_UCSC_refGene_filtered.txt --gene-annot 4.0
 ```
 
 Users can also access a more complete list of plotting features with the following command:
 
 ```
-./Panderas_Plots --help
+./Panderas_Plots/Panderas_Plots --help
 ```
 
 ---
@@ -266,10 +266,10 @@ To visualize the decay of haplotype homozygosity along chromosomes, users will e
 ### `Basic Command-Line Usage:`
 
 ```
-./Panderas_Plots ehh --alg {selscan,haplosweep} --input INPUT --output OUTPUT 
+./Panderas_Plots/Panderas_Plots ehh --alg {selscan,HaploSweep} --input INPUT --output OUTPUT 
 ```
 
-where users will provide: 1) the "ehh" function before the "--alg" flag; 2) the algorithm used to generate the haplotype-based statistic (either selscan or haplosweep in lowercase letters) after the "--alg" flag 3) the input created by selscan or HaploSweep (with the extension) after the "--input" flag; 4) the user-specified output filename (with either a pdf, svg, eps, or png extension at the end of the filename) after the "--output" flag; and. 
+where users will provide: 1) the "ehh" function before the "--alg" flag; 2) the algorithm used to generate the haplotype-based statistic (either selscan or HaploSweep) after the "--alg" flag 3) the input created by selscan or HaploSweep (with the extension) after the "--input" flag; 4) the user-specified output filename (with either a pdf, svg, eps, or png extension at the end of the filename) after the "--output" flag; and. 
 
 Panderas_Plots will also provide error messages to help identify issues with input files or command-line arguments.
 
@@ -278,13 +278,13 @@ Panderas_Plots will also provide error messages to help identify issues with inp
 #### `Plotting EHH from Selscan Output`
 
 ```
-./Panderas_Plots ehh --alg selscan --input selscan_ehh.out --output selscan_ehh_plot.pdf
+./Panderas_Plots/Panderas_Plots ehh --alg selscan --input selscan_ehh.out --output selscan_ehh_plot.pdf
 ```
 
 #### `Plotting EHH from HaploSweep Output`
 
 ```
-./Panderas_Plots ehh --alg haplosweep --input haplosweep_ehh.out --output haplosweep_ehh_plot.pdf 
+./Panderas_Plots/Panderas_Plots ehh --alg HaploSweep --input haplosweep_ehh.out --output haplosweep_ehh_plot.pdf 
 ```
 
 
