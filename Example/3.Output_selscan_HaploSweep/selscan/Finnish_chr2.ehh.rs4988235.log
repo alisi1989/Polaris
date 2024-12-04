@@ -1,0 +1,13 @@
+./selscan --ehh rs4988235 --ehh-win 2000000 --hap Finnish_1KG_chr2.hap --map Finnish_1KG_chr2.map --out Finnish_chr2 
+v2.0.2
+Calculating Input filename: Finnish_1KG_chr2.hap
+Map filename: Finnish_1KG_chr2.map
+Output file: Finnish_chr2.ehh.rs4988235.out
+Threads: 1
+Scale parameter: 20000
+Max gap parameter: 200000
+EHH cutoff value: 0.05
+Phased: yes
+Alt flag set: no
+--skip-low-freq set. Removing all variants < 0.05.
+Removed 475497 low frequency variants.
