@@ -171,7 +171,7 @@ The normalized output files from these programs will serve as input files for Pa
   - [Basic Command-Line Usage](#basic-command-line-usage)
   - [Example of Usage](#example-of-usage)
   - [Manhattan plot with threshold line and SNP annotations](#manhattan-plot-with-threshold-line-and-snp-annotations)
-  - Manhattan plot with threshold line SNPs and Genes annotations (#manhattan-plot-with-threshold-line-snps-and-genes-annotations)
+  - [Manhattan plot with threshold line SNPs and Genes annotations] (#manhattan-plot-with-threshold-line-snps-and-genes-annotations)
 - [EHH Plotting](#ehh-plotting)
   - [Basic Command-Line Usage](#basic-command-line-usage-1)
   - [Example of Usage](#example-of-usage-1)
@@ -227,9 +227,10 @@ Notably, Panderas_Plots also offers an array of options to visualize and annotat
 
 where users can select options to create a threshold line and annotate SNPs in addition to the required arguments described above. In particular, users can specify: 1) an iHS Y-value with the `"--threshold-line"` flag for outlier values (e.g., 2); 2) a specific color of the threshold line using the `"--color-line"` flag (e.g., red); 3) threshold for annotating statistics with rs identifiers in absolute numbers (e.g., 2, 3, 4) with `"--rs-annot"` flag; and 4) specify (yes or no) if users want to add labels (rs identifiers) to dots with the `"--label-annot"` flag. Because labels can overlap, this flag gives users the option to remove the labels for a cleaner plot, if they prefer.
 
-Other noteworthy features include: i) changing the size and/or color of each dot in Manhattan plots with the `--size–dots` flag; and ii) creating a list of genes harboring outlier iHS values in a *.txt file using `"--gene–annot"`. 
+Other noteworthy features include: i) changing the size and/or color of each dot in Manhattan plots with the --size–dots flag; and ii) creating a list of genes with iHS statistics larger or smaller than a particular threshold value (e.g., 4.1, meaning iHS<-4.1 and iHS>4.1) using "--gene–annot". These genes will be saved to a *.txt file.
 
-For this latter feature (`"--gene–annot"`), if users wish to include gene annotations in the Manhattan plots, they will need to prepare a separate text file, or use the one already provided in this repository in the `Gene-Reference` folder, for the gene annotation in tab-delimited format and use the command `--gene-file` followed by the .txt file:
+For this latter feature ("--gene–annot"), users also will need to specify the --gene-file flag with the HG38_UCSC_refGene_filtered.txt (e.g., --gene-file HG38_UCSC_refGene_filtered.txt). Using the —gene-annot and —gene-file flags together, the resulting genes will be saved to a *.txt file. While we provide a reference file to annotate by gene name (HG38_UCSC_refGene_filtered.txt), users may want to use another reference file. If so, this reference file should be formatted as below. However, it is our recommendation that users utilize the gene reference file that we provide.
+
 
 ```
 chr    start    end    gene
@@ -240,13 +241,11 @@ c)    end: End position of the gene (e.g., 135850000).
 d)    gene: Gene name (e.g., MCM6).
 ```
 
+
 ### Manhattan plot with threshold line SNPs and Genes annotations
 
-We provide a reference file to annotate by gene name (HG38_UCSC_refGene_filtered.txt), users may want to use another reference file. If so, this reference file should be formatted as above. However, it is our recommendation that users utilize the gene reference file that we provide.
-
-
 ```
-./Panderas_Plots/Panderas_Plots manhattan --alg HaploSweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/Finnish_norm.txt --chr 2 --output Example/4.Output_iHS_EHH_Plots/haplosweep_manhattan_genes_annotated.png --threshold-line 2.0 --color-line red --rs-annot 4.0 --label-annot y --statistic iHS --gene-file Gene-Reference/HG38_UCSC_refGene_filtered.txt --gene-annot 4.0
+./Panderas_Plots/Panderas_Plots manhattan --alg HaploSweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/Finnish_norm.txt --chr 2 --output Example/4.Output_iHS_EHH_Plots/haplosweep_manhattan_genes_annotated.png --threshold-line 2.0 --color-line red --rs-annot 4.0 --label-annot y --statistic iHS --gene-file Gene-Reference/HG38_UCSC_refGene_filtered.txt --gene-annot 4.1
 ```
 
 Users can also access a more complete list of plotting features with the following command:
