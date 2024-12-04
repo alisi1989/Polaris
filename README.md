@@ -10,19 +10,19 @@ The Polaris package consists of two distinct programs written in the C-Python la
 Table of Contents
 
 Table of Contents
-•	Installation
-•	Requirements
-•	Ancestral allele file
-o	`Basic Format`
-o	`Example Format`
-•	Reference Genetic Map File
-o	`Basic Format`
-o	`Example Format`
-•	**Run the Panderas software**
-o	`Command-Line Usage`
-o	`Example of Usage`
-o	`python Panderas.py --help`
-•	4. **Output Files**
+•    Installation
+•    Requirements
+•    Ancestral allele file
+o    `Basic Format`
+o    `Example Format`
+•    Reference Genetic Map File
+o    `Basic Format`
+o    `Example Format`
+•    **Run the Panderas software**
+o    `Command-Line Usage`
+o    `Example of Usage`
+o    `python Panderas.py --help`
+•    4. **Output Files**
 
 ---
 **Panderas**
@@ -42,16 +42,16 @@ chmod +x Panderas
 
 **Requirements for Panderas**
 
-1.	Variant call format file
+1.    Variant call format file
 The input for the Panderas software consists of phased bi-allelic genotypes in a variant call format (vcf) file. The vcf file should have the following format: 
 
-a)	It should be phased. This task can be accomplished with a number of publicly available programs, such as Beagle, Shapeit4, Eagle, or similar phasing software.
+a)    It should be phased. This task can be accomplished with a number of publicly available programs, such as Beagle, Shapeit4, Eagle, or similar phasing software.
 
-b)	It should be gzipped (e.g., *.vcf.gz) and properly indexed (e.g., *.vcf.gz.tbi).
+b)    It should be gzipped (e.g., *.vcf.gz) and properly indexed (e.g., *.vcf.gz.tbi).
 
-c)	All variants must have an rs identifier (no missing or empty identifiers are allowed). Variants with missing rs identifiers (e.g., '.') could cause issues in downstream analyses.
+c)    All variants must have an rs identifier (no missing or empty identifiers are allowed). Variants with missing rs identifiers (e.g., '.') could cause issues in downstream analyses.
 
-d)	For vcf files created using build hg38, chromosomes should be annotated with "chr" followed by the chromosome number (e.g., "chr1", "chr2",…"chr22").
+d)    For vcf files created using build hg38, chromosomes should be annotated with "chr" followed by the chromosome number (e.g., "chr1", "chr2",…"chr22").
 
 In cases where the vcf file contains variants with missing rs identifiers (e.g., "."), users can run our custom script, provided in the Fill_rsidentifier folder in our GitHub repository, to replace missing identifiers with unique identifiers (e.g., rs1, rs2, rs3, etc.).
 
@@ -69,7 +69,7 @@ where users will provide: 1) the path to the gzipped input vcf file after the "-
 ./Fill_._rsunknown.py –-input path_to_folder/Dataset-Test/ --output path_to_folder/Output/
 </code></pre>
 
-2.	Ancestral allele file
+2.    Ancestral allele file
 Given the space limitations on GitHub, the Homo_sapiens_hg38_reference file from Ensembl for each chromosome (https://ftp.ensembl.org/pub/release-112/fasta/ancestral_alleles/) is stored separately in DropBox (https://www.dropbox.com/scl/fo/0du8z7xoeqs5qqr73qk2s/ADuGddGTZXwUIeZkmQZ-geM?rlkey=chre7oc2fcwpl4bi9p2gab4jb&st=5igiuhrx&dl=0) and are available for downloaded. If users wish to incorporate a different ancestral allele reference file, they will need to make sure the file is in a tab-delimited format (please see below). 
 
 
@@ -154,20 +154,20 @@ The normalized output files from these programs will serve as input files for Pa
 **Panderas_Plots**
 
 Table of Contents
-•	Overview
-•	Installation
-•	Requirements
-•	Manhattan Plotting 
-o	Basic-Command-Line Options
-•	Example of Usage
-o	Manhattan plot with threshold line and SNP annotations
-•	EHH Plotting
-o	Basic-Command-Line Options
-o	Example of Usage
-	Plotting EHH from Selscan Output
-	Plotting EHH from HaploSweep Output
-•	License
-•	Contact
+•    Overview
+•    Installation
+•    Requirements
+•    Manhattan Plotting 
+o    Basic-Command-Line Options
+•    Example of Usage
+o    Manhattan plot with threshold line and SNP annotations
+•    EHH Plotting
+o    Basic-Command-Line Options
+o    Example of Usage
+    Plotting EHH from Selscan Output
+    Plotting EHH from HaploSweep Output
+•    License
+•    Contact
 
 
 **Overview** 
@@ -226,10 +226,10 @@ For this latter feature ("--gene–annot"), if users wish to include gene annota
 
 chr    start    end    gene
 
-a)	chr: Chromosome number (e.g., chr2).
-b)	start: Start position of the gene (e.g., 135800000).
-c)	end: End position of the gene (e.g., 135850000).
-d)	gene: Gene name (e.g., MCM6).
+a)    chr: Chromosome number (e.g., chr2).
+b)    start: Start position of the gene (e.g., 135800000).
+c)    end: End position of the gene (e.g., 135850000).
+d)    gene: Gene name (e.g., MCM6).
 
 Although we provide a reference file to annotate by gene name (HG38_UCSC_refGene_filtered .txt), users may want to use another reference file. If so, this reference file should be formatted as above. However, it is our recommendation that users utilize the gene reference file that we provide.
 
@@ -270,8 +270,8 @@ Plotting EHH from HaploSweep Output
 INCLUDE IMAGE HERE
 
 Recommendations and Notes
-•	Consistent Chromosome Naming: Ensure that chromosome identifiers are consistent across your input files (e.g., "chr2" or "2").
-•	Highlighting SNPs: To highlight specific SNPs, users are required to create a text file (snps_to_highlight.txt) with one SNP identifier per line. The filename will be entered after the "--snps-to-highlight" flag.
+•    Consistent Chromosome Naming: Ensure that chromosome identifiers are consistent across your input files (e.g., "chr2" or "2").
+•    Highlighting SNPs: To highlight specific SNPs, users are required to create a text file (snps_to_highlight.txt) with one SNP identifier per line. The filename will be entered after the "--snps-to-highlight" flag.
 
 `License`
 
@@ -280,5 +280,5 @@ This project is licensed under the MIT License.
 `Contact`
 
 For questions or comments, please contact:
-1.	Alessandro Lisi, alisi@usc.edu or on GitHub (alisi1989)
-2.	Michael C. Campbell, mc44680@usc.edu or on GitHub (mc44680)
+1.    Alessandro Lisi, alisi@usc.edu or on GitHub (alisi1989)
+2.    Michael C. Campbell, mc44680@usc.edu or on GitHub (mc44680)
