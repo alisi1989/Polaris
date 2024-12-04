@@ -10,10 +10,10 @@ The Polaris package consists of two distinct programs written in the C-Python la
 
 **Table of Contents**
 
-- `Installation`
-- `Requirements`
+- `Installation of Panderas`
+- `Requirements for Panderas`
 - `Ancestral allele file`
-  - `B  asic Format`
+  - `Basic Format`
   - `Example Format`
 - `Reference Genetic Map File`
   - `Basic Format`
@@ -22,25 +22,31 @@ The Polaris package consists of two distinct programs written in the C-Python la
   - `Command-Line Usage`
   - `Example of Usage`
   - `./Panderas --help`
-- 4. **Output Files**
+- **Output Files**
 
 ---
+
 **Panderas**
 
+---
+
 **Overview**
+
 The Panderas software classifies ancestral and derived alleles on chromosomes in phased vcf files for analysis by two haplotype-based programs, selscan and HaploSweep.
 
-**Installation of Panderas**
-The Polaris package can be downloaded to users’ local computers by 
-clicking on Polaris under "Releases" in our Github repository (https://github.com/alisi1989/Polaris). Alternatively, users can download the Polaris package from DropBox (https://www.dropbox.com/scl/fo/2s6hm1owv26wivrn29saw/AGkE6YM91jp_DzJlgNScaSY?rlkey=pxe1i6ytbcsup7jv6h1q5fq3m&st=b1dyusit&dl=0). To unzip the file from GitHub (the same file from DropBox will be uncompressed), type "unzip Polaris_main.zip" at the command line prompt (typically indicated by a ">" symbol), and the uncompressed "Polaris_Main" folder will appear. At the command-line prompt in the Terminal window, users will change the current working directory to the "Panderas" directory where the software is located.
+---
+
+# Installation of Panderas
+
+The Polaris package can be downloaded to users’ local computers by clicking on Polaris under "Releases" in our Github repository `(https://github.com/alisi1989/Polaris)`. Alternatively, users can download the Polaris package from DropBox `(https://www.dropbox.com/scl/fo/2s6hm1owv26wivrn29saw/AGkE6YM91jp_DzJlgNScaSY?rlkey=pxe1i6ytbcsup7jv6h1q5fq3m&st=b1dyusit&dl=0)`. To unzip the file from GitHub (the same file from DropBox will be uncompressed), type `"unzip Polaris_main.zip"` at the command line prompt `(typically indicated by a ">" symbol)`, and the uncompressed `"Polaris_Main"` folder will appear. At the command-line prompt in the Terminal window, users will change the current working directory to the "Panderas" directory where the software is located.
 
 Users will then need to ensure the software is executable with the following command:
 
-chmod +x Panderas
+`chmod +x Panderas`
 
 ---
 
-**Requirements for Panderas**
+# Requirements for Panderas
 
 1.    Variant call format file
 The input for the Panderas software consists of phased bi-allelic genotypes in a variant call format (vcf) file. The vcf file should have the following format: 
@@ -69,17 +75,18 @@ where users will provide: 1) the path to the gzipped input vcf file after the "-
 ./Fill_._rsunknown.py –-input path_to_folder/Dataset-Test/ --output path_to_folder/Output/
 </code></pre>
 
-2.    Ancestral allele file
+# Ancestral allele file
+
 Given the space limitations on GitHub, the Homo_sapiens_hg38_reference file from Ensembl for each chromosome (https://ftp.ensembl.org/pub/release-112/fasta/ancestral_alleles/) is stored separately in DropBox (https://www.dropbox.com/scl/fo/0du8z7xoeqs5qqr73qk2s/ADuGddGTZXwUIeZkmQZ-geM?rlkey=chre7oc2fcwpl4bi9p2gab4jb&st=5igiuhrx&dl=0) and are available for downloaded. If users wish to incorporate a different ancestral allele reference file, they will need to make sure the file is in a tab-delimited format (please see below). 
 
 
-`Basic Format`
+## `Basic Format`
 
 </code></pre>
 Position  Allele
 </code></pre>
 
-`Example of Format:`
+## `Example of Format:`
 
 </code></pre>
 16050075  G
