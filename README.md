@@ -14,10 +14,10 @@ The Polaris package consists of two distinct programs written in the C-Python la
 - [Requirements for Panderas](#requirements-for-panderas)
 - [Ancestral allele file](#ancestral-allele-file)
   - [Basic Format](#basic-format)
-  - [Example Format](#example-format)
+  - [Example Format](#example-of-format)
 - [Reference Genetic Map File](#reference-genetic-map-file)
   - [Basic Format](#basic-format-1)
-  - [Example Format](#example-format-1)
+  - [Example Format](#example-of-format-1)
 - [Run the Panderas software](#run-the-panderas-software)
   - [Command-Line Usage](#command-line-usage)
   - [Example of Usage](#example-of-usage)
@@ -98,14 +98,14 @@ Position  Allele
 
 The PLINK genetic map files (i.e., reference maps from https://bochet.gcc.biostat.washington.edu/beagle/genetic_maps/) are provided in DropBox `(https://www.dropbox.com/scl/fo/b3a9z16sqjvksprqudlpg/ACv4xl3Nk9HHZP0m4Em0CVI?rlkey=hn23fb1j5vie5d84ss3hpf8nv&st=rnm2ve4n&dl=0)`. Genetic map files should contain the genetic position and physical position in white space delimited columns. 
 
-`Basic Format:`
+### `Basic Format:`
 
 ```
 GeneticDistance PhysicalPosition
 ```
 
   
-`Example of Format:`
+### `Example of Format:`
 
 ```
 0.123456 16050000  
@@ -118,7 +118,7 @@ GeneticDistance PhysicalPosition
 
 The Panderas software is provided as a standalone executable file. Users can run this program as follows:
 
-`Command-Line Usage`
+### `Command-Line Usage`
 
 ```
 ./Panderas -v [argument] -o [argument] -c [argument] –-ancestor [argument] –-genetic-map [argument]
@@ -130,7 +130,7 @@ The runtime for generating the *.hap and *.map files for alleles on Chromosome 2
 
 Panderas also provides error messages to help identify issues with input files and/or command-line arguments.
 
-`Example of Usage`
+### `Example of Usage`
 
 ```
 ./Panderas -v Example/Finnish_1KG.vcf.gz -c chr2 --ancestor Ancestor-Alleles/ancestor_alleles_chr2.txt --genetic-map Genetic-Map/genetic_map_chr2.txt -o Output/Finnish_chr2
@@ -138,11 +138,14 @@ Panderas also provides error messages to help identify issues with input files a
 
 Additional information about these arguments also can be accessed using the following command: 
 
-./Panderas.py --help
+### `Help Command`
+
+```
+./Panderas --help
+```
 
 Finally, regarding the genetic map, the Panderas software will perform a linear interpolation to determine the genetic position (centimorgans, cM) of loci in a given dataset based on the physical position (i.e., genomic coordinate) and the corresponding genetic position in the generic PLINK map file (i.e., the reference). Specifically, Panderas will search for the two physical and genetic positions in the PLINK reference file that flank a query locus in a given dataset and calculate the genetic position for that query locus using information in the reference.
 
----
 
 ## Output Files
 
@@ -154,15 +157,16 @@ After running Panderas, the following output files will be generated:
 `*.map:` The genetic map file contains the interpolated genetic positions.
 ```
 
-The output files are now ready for direct use as input file by selscan and/or HaploSweep. More specific information on the usage of selscan and/or HaploSweep can be found at https://github.com/szpiech/selscan and https://github.com/ChenHuaLab/HaploSweep, respectively. 
+The output files are now ready for direct use as input file by selscan and/or HaploSweep. More specific information on the usage of selscan and/or HaploSweep can be found at `https://github.com/szpiech/selscan` and `https://github.com/ChenHuaLab/HaploSweep`, respectively. 
 
 The normalized output files from these programs will serve as input files for Panderas_Plots. If users wish to familiarize themselves with Panderas using the example *.hap and *.map files on our GitHub repository, these files must be uncompressed prior to use.
 
+---
 
+# Panderas_Plots
 
-**Panderas_Plots**
+**Table of Contents**
 
-Table of Contents
 •    Overview
 •    Installation
 •    Requirements
