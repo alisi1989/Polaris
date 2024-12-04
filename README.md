@@ -64,10 +64,10 @@ In cases where the vcf file contains variants with missing rs identifiers (e.g.,
 `Command-line Usage: ` 
 
 ```bash
-./Fill_._rsunknown.py –-input [argument] --output [argument]
+python Fill_._rsunknown.py –-input [argument] --output [argument]
 ```
 
-where users will provide: 1) the path to the gzipped input vcf file after the "--input" flag; and 2) the path to where the gzipped output vcf file will be saved after the "--output" flag. 
+where users will provide: 1) the path to the gzipped input vcf file after the `"--input"` flag; and 2) the path to where the gzipped output vcf file will be saved after the `"--output" flag`. 
 
 `Example of Usage:`
 
