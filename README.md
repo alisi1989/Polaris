@@ -1,4 +1,4 @@
-#Polarization of ancestral and derived polymorphic alleles for inferences of extended haplotype homozygosity in human populations
+# Polarization of ancestral and derived polymorphic alleles for inferences of extended haplotype homozygosity in human populations
 
 ---
 
