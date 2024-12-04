@@ -157,8 +157,7 @@ After running Panderas, the following output files will be generated:
 
 The output files are now ready for direct use as input file by selscan and/or HaploSweep. More specific information on the usage of selscan and/or HaploSweep can be found at `https://github.com/szpiech/selscan` and `https://github.com/ChenHuaLab/HaploSweep`, respectively. 
 
-The normalized output files from these programs will serve as input files for Panderas_Plots. If users wish to familiarize themselves with Panderas using the example *.hap and *.map files on our GitHub repository, these files must be uncompressed prior to use.
-
+The normalized output files from these programs will serve as input files for Panderas_Plots. If users wish to familiarize themselves with Panderas using the example *.hap and *.map files on our GitHub repository.
 ---
 
 # Panderas_Plots
