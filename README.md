@@ -203,7 +203,7 @@ The normalized output files from selscan and/or HaploSweep (e.g., Finnish_1KG_ch
 
 To visualize haplotype-based statistics along a given chromosome, users will execute Panderas_Plots as follows:
 
-### `Basic Command-Line Usage: `
+### `Basic Command-Line Usage:`
 
 ```
 ./Panderas_Plots manhattan –-alg [argument] --input [argument] --chr [argument] --output [argument] 
@@ -213,7 +213,7 @@ where users will provide: 1) the `"manhattan"` function before the `"--alg"` fla
 
 Panderas_Plots also provides error messages to help identify issues with input files or command-line arguments.
 
-### `Example of Usage: `
+### `Example of Usage:`
 
 ```
 ./Panderas_Plots manhattan --alg selscan --input selscan_ihs.out --chr 2 --output selscan_manhattan.pdf
@@ -257,7 +257,7 @@ Users can also access a more complete list of plotting features with the followi
 
 To visualize the decay of haplotype homozygosity along chromosomes, users will execute Panderas_Plots as follows:
 
-### `Basic Command-Line Usage: `
+### `Basic Command-Line Usage:`
 
 ```
 ./Panderas_Plots ehh --alg {selscan,haplosweep} --input INPUT --output OUTPUT 
