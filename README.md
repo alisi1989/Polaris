@@ -1,6 +1,5 @@
 # Polarization of ancestral and derived polymorphic alleles for inferences of extended haplotype homozygosity in human populations
 
----
 
 **Overview**
 
@@ -28,7 +27,6 @@ The Polaris package consists of two distinct programs written in the C-Python la
 
 ## Panderas
 
----
 
 ## Overview
 
