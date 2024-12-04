@@ -208,7 +208,7 @@ To visualize haplotype-based statistics along a given chromosome, users will exe
 ./Panderas_Plots manhattan –-alg [argument] --input [argument] --chr [argument] --output [argument] 
 ```
 
-where users will provide: 1) the `"manhattan"` function before the `"--alg"` flag; 2) the algorithm used to generate the haplotype-based statistic (either selscan or haplosweep in lowercase letters) after the `"--alg"` flag;  3) the input file from selscan or HaploSweep with the file extension (e.g., Finnish_1KG_chr2.ihs.out.100bins.norm) after the `"--input"` flag; 4) the chromosome analyzed (e.g., "2" or "chr 2") after the `"--chr"` flag; and 5) the output filename (with either a pdf, svg, eps, or png extension at the end of the filename) after the `"--output"` flag. 
+where users will provide: 1) the `"manhattan"` function before the `"--alg"` flag; 2) the algorithm used to generate the haplotype-based statistic (either selscan or HaploSweep) after the `"--alg"` flag;  3) the input file from selscan or HaploSweep with the file extension (e.g., Finnish_1KG_chr2.ihs.out.100bins.norm) after the `"--input"` flag; 4) the chromosome analyzed (e.g., "2" or "chr 2") after the `"--chr"` flag; and 5) the output filename (with either a pdf, svg, eps, or png extension at the end of the filename) after the `"--output"` flag. 
 
 Panderas_Plots also provides error messages to help identify issues with input files or command-line arguments.
 
@@ -223,7 +223,7 @@ Notably, Panderas_Plots also offers an array of options to visualize and annotat
 ### Manhattan plot with threshold line and SNP annotations
 
 ```
-./Panderas_Plots/Panderas_Plots manhattan --alg haplosweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/Finnish_norm.txt --chr 2 --output Example/4.Output_iHS_EHH_Plots/haplosweep_manhattan.png --threshold-line 2.0 --color-line red --rs-annot 2.0 --label-annot y --statistic iHS
+./Panderas_Plots/Panderas_Plots manhattan --alg HaploSweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/Finnish_norm.txt --chr 2 --output Example/4.Output_iHS_EHH_Plots/haplosweep_manhattan.png --threshold-line 2.0 --color-line red --rs-annot 2.0 --label-annot y --statistic iHS
 ```
 
 where users can select options to create a threshold line and annotate SNPs in addition to the required arguments described above. In particular, users can specify: 1) an iHS Y-value with the `"--threshold-line"` flag for outlier values (e.g., 2); 2) a specific color of the threshold line using the `"--color-line"` flag (e.g., red); 3) threshold for annotating statistics with rs identifiers in absolute numbers (e.g., 2, 3, 4) with `"--rs-annot"` flag; and 4) specify (yes or no) if users want to add labels (rs identifiers) to dots with the `"--label-annot"` flag. Because labels can overlap, this flag gives users the option to remove the labels for a cleaner plot, if they prefer.
