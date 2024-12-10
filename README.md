@@ -70,7 +70,7 @@ where users will provide: 1) the path to the gzipped input vcf file after the `"
 `Example of Usage:`
 
 ```bash
-./Fill_._rsunknown.py –-input path_to_folder/Dataset-Test/ --output path_to_folder/Output/
+python Fill_._rsunknown.py –-input path_to_folder/Dataset-Test/ --output path_to_folder/Output/
 ```
 
 ## Ancestral allele file
