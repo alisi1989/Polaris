@@ -289,8 +289,8 @@ Panderas_Plots will also provide error messages to help identify issues with inp
 
 Polaris is fully compatible with the GRCh37 (hg19) reference genome. To use it effectively with hg19, you will need two key inputs:
 
-1. **Recombination Maps**  
-2. **Ancestral Allele Data**
+1. **Recombination Maps for built 37**  
+2. **Ancestral Allele Data for built 37**
 
 Below, we explain how to prepare both inputs for use with Polaris on your phased VCF dataset.
 
