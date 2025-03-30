@@ -327,7 +327,7 @@ For example:
 65828363528 C
 ```
 
-## Running Polaris with GRCh37
+Running Polaris with GRCh37
 
 Once you have:
 The edited recombination map (e.g., edited_plinkmaphg19.txt)
