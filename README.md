@@ -285,8 +285,58 @@ Panderas_Plots will also provide error messages to help identify issues with inp
 ./Panderas_Plots/Panderas_Plots ehh --alg HaploSweep --input Example/3.Output_selscan_HaploSweep/HaploSweep/ehh_rs4988235.txt --output Example/4.Output_iHS_EHH_Plots/Finnish_ehh_plot_rs4988235_HaploSweep.pdf
 ```
 
+## Using Polaris with GRCh37 (hg19)
 
-Recommendations and Notes
+Polaris is fully compatible with the GRCh37 (hg19) reference genome. To use it effectively with hg19, you will need two key inputs:
+
+1. **Recombination Maps**  
+2. **Ancestral Allele Data**
+
+Below, we explain how to prepare both inputs for use with Polaris on your phased VCF dataset.
+
+---
+
+### Recombination Maps for GRCh37
+
+Recombination maps for GRCh37 can be downloaded from [this link](https://bochet.gcc.biostat.washington.edu/beagle/genetic_maps/).  
+
+**Important:** Polaris requires a simple text file containing two whitespace-delimited columns:
+
+1. **Genetic distance** (in centimorgans)  
+2. **Physical position** (in base pairs)  
+
+Most recombination maps you download will have additional columns that need to be removed. For instance, if the file is named `plinkmaphg19.map`, you can extract only the desired columns with:
+
+```bash
+awk '{print $4, $3}' plinkmaphg19.map > edited_plinkmaphg19.txt
+```
+This command prints column 4 (genetic distance) and column 3 (physical position) into a new file, edited_plinkmaphg19.txt, which Polaris can then use.
+
+Ancestral Allele Data for GRCh37
+Ancestral allele data for GRCh37 is available at Ensembl (release 75). However, this data is typically provided in FASTA format, which differs from the two-column format required by Polaris.
+Polaris needs a tab-delimited file with:
+Position (from 1 to the last nucleotide position on the chromosome)
+Ancestral Allele (one-letter code A, C, G, or T)
+
+For example:
+
+```
+1 A
+2 T
+...
+65828363528 C
+```
+
+## Running Polaris with GRCh37
+
+Once you have:
+The edited recombination map (e.g., edited_plinkmaphg19.txt)
+The two-column ancestral allele file for GRCh37
+…you can invoke Polaris (Panderas) on your phased VCF just as you would for hg38, specifying the --genetic-map option with the edited map and the --ancestor option with your new ancestral allele file. This setup ensures that Polaris can correctly polarize alleles and interpolate genetic distances on the GRCh37 reference genome.
+
+
+
+## Recommendations and Notes
 
 •    Consistent Chromosome Naming: Ensure that chromosome identifiers are consistent across your input files (e.g., "chr2" or "2")    
 
