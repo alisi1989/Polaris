@@ -289,7 +289,7 @@ Panderas_Plots will also provide error messages to help identify issues with inp
 
 Polaris is fully compatible with the GRCh37 (hg19) reference genome. To use it effectively with hg19, users will need two key files as input:
 
-1. **Recombination Maps for GRCh37**  
+1. **Genetic maps for GRCh37**  
 2. **Ancestral Allele Data for GRCh37**
 
 Below, we explain how to prepare both input files for use with Polaris on a fully phased vcf dataset.
@@ -305,14 +305,14 @@ Genetic maps for GRCh37 can be downloaded from [this link](https://bochet.gcc.bi
 1. **Genetic distance** (in centimorgans)  
 2. **Physical position** (in base pairs)  
 
-Most genetic maps will have additional columns that need to be removed. For instance, if the file is named `plinkmaphg19.map`, you can extract only the desired columns with the following command:
+Most genetic maps will have additional columns that need to be removed. For instance, if the file is named `plinkmaphg19.map`, users can extract only the desired columns with the following command:
 
 ```bash
 awk '{print $4, $3}' plinkmaphg19.map > edited_plinkmaphg19.txt
 ```
 The above command prints column 4 (genetic distance) and column 3 (physical position) to a new file, edited_plinkmaphg19.txt, which Polaris can then use.
 
-**Ancestral Allele Data for GRCh37**
+**Ancestral allele data for GRCh37**
 
 The ancestral allele data for GRCh37 are available on Ensembl (release 75). However, these data are typically provided in FASTA format, which differs from the two-column format required by Polaris.
 
@@ -331,7 +331,7 @@ For example:
 
 ## Running Polaris with GRCh37
 
-Once users have edited the genetic map file (e.g., edited_plinkmaphg19.txt) and the two-column ancestral allele file for GRCh37, they can run Polaris (Panderas) on the phased vcf just as they would for hg38, specifying the --genetic-map option with the edited map and the --ancestor option with the new ancestral allele file. This setup ensures that Polaris will correctly polarize alleles and interpolate genetic distances using the GRCh37 map file as reference.
+Once users have edited the genetic map file (e.g., edited_plinkmaphg19.txt) and the two-column ancestral allele file for GRCh37, they can run Polaris (Panderas) on the phased vcf just as they would for hg38, specifying the --genetic-map flag with the edited map file as the argument and the --ancestor flag with the new ancestral allele file as the argument. This setup ensures that Polaris will correctly polarize alleles and interpolate genetic distances using the GRCh37 map file as reference.
 
 
 
